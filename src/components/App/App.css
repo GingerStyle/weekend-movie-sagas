@@ -22,3 +22,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.movieTile {
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 5px;
+}
