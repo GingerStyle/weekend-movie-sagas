@@ -7,9 +7,14 @@ const Details = () => {
     const genres = useSelector(store => store.genres);
     let genreString = '';
 
+    //function to format the genres into a string to display on the DOM
     const genreFormatter = () => {
         for(let i=0; i<genres.length; i++){
-            genreString += genres[i].name + ' ';
+            if(i < genres.length - 1){
+                genreString += genres[i].name + ', ';
+            }else if(i == genres.length - 1){
+                genreString += genres[i].name;
+            }
         };
     }
 
