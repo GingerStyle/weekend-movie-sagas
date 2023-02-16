@@ -34,9 +34,9 @@ function* fetchTheGenres(action) {
     // get this movie's genres from the database
     try{
         let id = action.payload;
-        const genres = yield axios.get(`/api/genre/:${id}`);
+        const genres = yield axios.get(`/api/genre/${id}`);
         console.log('get genres:', genres.data);
-        yield put({ type: 'SET_GENRES', paylod: genres.data });
+        yield put({ type: 'SET_GENRES', payload: genres.data });
     } catch {
         console.log('fetchTheGenres error');
     }
