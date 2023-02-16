@@ -30,10 +30,10 @@ function* fetchAllMovies() {
 }
 
 //function to fetch the genres on the specific movie that was clicked on
-function* fetchTheGenres() {
+function* fetchTheGenres(action) {
     // get this movie's genres from the database
     try{
-        let id = thisMovie.title;
+        let id = action.payload;
         const genres = yield axios.get(`/api/genre/:${id}`);
         console.log('get genres:', genres.data);
         yield put({ type: 'SET_GENRES', paylod: genres.data });

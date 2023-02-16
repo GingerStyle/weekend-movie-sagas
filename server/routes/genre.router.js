@@ -4,10 +4,10 @@ const pool = require('../modules/pool')
 
 router.get('/:id', (req, res) => {
   console.log('req.params.id:', req.params.id);
-  let queryText = `SELECT "genres"."name", "movies"."title" FROM "movies"
+  let queryText = `SELECT "genres"."name" FROM "movies"
   JOIN "movies_genres" ON "movies_genres"."movie_id" = "movies"."id"
   JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
-  WHERE "movies"."title" = '${req.params.id}';`;
+  WHERE "movies"."id" = '${req.params.id}';`;
   pool.query(queryText)
   .then((response) => {
     console.log('response.rows:', response.rows);

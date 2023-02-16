@@ -14,9 +14,9 @@ function MovieList() {
     }, []);
 
     //function to capture which movie was clicked on and save it in a reducer, then go to the details view
-    const handleClick = (movieObject) => {
-        dispatch({type: 'SET_THIS_MOVIE', payload: movieObject});
-        dispatch({type: 'FETCH_THE_GENRES'});
+    const handleClick = (movie) => {
+        dispatch({type: 'SET_THIS_MOVIE', payload: movie});
+        dispatch({type: 'FETCH_THE_GENRES', payload: movie.id});
         history.push('/details');
     }
 
