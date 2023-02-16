@@ -26,7 +26,7 @@ const Details = () => {
         <p>{movie.description}</p>
         <div>
             {genreFormatter()}
-            Genres: {genreString}
+            <p>Genres: {genreString}</p>
         </div>
         <br></br>
         <button onClick={() => history.push('/')}>Back To List</button>
